@@ -22,30 +22,22 @@ class OthelloGame:
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        # Contains buttons, named in this form: [a-h][1-8]: a1, a2, ...h7, h8
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.othello = OthelloGame()
-        # Here I use the getattr function to get the 64 buttons in the UI file.
         self.piece_bottons = [
             getattr(self.ui, attrname) for attrname in [
                 f"{alpha}{num}" for alpha in "abcdefgh" for num in range(1, 9)
             ]
         ]
-
-        # Iterate through all the buttons, bind them to anonymous functions,
-        # call the click method in the anonymous function and pass in the name
-        # of the button
         for pb in self.piece_bottons:
             pb.clicked.connect(
-                lambda: self.othello.change_piece(pb.objectName())
+                (lambda _=None, pb=pb: self.othello.change_piece(
+                    pb.objectName()))
             )
 
         self.ui.reset_button.clicked.connect(self.reset)
         self.show()
-
-    def click(self, position: str):
-        print(position)
 
     def reset(self):
         self.ui.GameInfoLabel.setText("Reset game!")
