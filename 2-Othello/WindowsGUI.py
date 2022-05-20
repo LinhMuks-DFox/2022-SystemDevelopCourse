@@ -43,7 +43,8 @@ class Ui_MainWindow(object):
             self.gridLayoutWidget.sizePolicy().hasHeightForWidth())
         self.gridLayoutWidget.setSizePolicy(sizePolicy1)
         font = QFont()
-        font.setPointSize(14)
+        font.setFamilies([u"Consolas"])
+        font.setPointSize(28)
         self.gridLayoutWidget.setFont(font)
         self.grid2 = QGridLayout(self.gridLayoutWidget)
         self.grid2.setObjectName(u"grid2")
@@ -465,13 +466,13 @@ class Ui_MainWindow(object):
         self.grid4 = QGridLayout(self.gridLayoutWidget_4)
         self.grid4.setObjectName(u"grid4")
         self.grid4.setContentsMargins(0, 0, 0, 0)
-        self.f5 = QPushButton(self.gridLayoutWidget_4)
-        self.f5.setObjectName(u"f5")
-        sizePolicy1.setHeightForWidth(self.f5.sizePolicy().hasHeightForWidth())
-        self.f5.setSizePolicy(sizePolicy1)
-        self.f5.setFont(font)
+        self.e5 = QPushButton(self.gridLayoutWidget_4)
+        self.e5.setObjectName(u"e5")
+        sizePolicy1.setHeightForWidth(self.e5.sizePolicy().hasHeightForWidth())
+        self.e5.setSizePolicy(sizePolicy1)
+        self.e5.setFont(font)
 
-        self.grid4.addWidget(self.f5, 0, 1, 1, 1)
+        self.grid4.addWidget(self.e5, 0, 0, 1, 1)
 
         self.g5 = QPushButton(self.gridLayoutWidget_4)
         self.g5.setObjectName(u"g5")
@@ -481,13 +482,13 @@ class Ui_MainWindow(object):
 
         self.grid4.addWidget(self.g5, 0, 2, 1, 1)
 
-        self.e5 = QPushButton(self.gridLayoutWidget_4)
-        self.e5.setObjectName(u"e5")
-        sizePolicy1.setHeightForWidth(self.e5.sizePolicy().hasHeightForWidth())
-        self.e5.setSizePolicy(sizePolicy1)
-        self.e5.setFont(font)
+        self.f5 = QPushButton(self.gridLayoutWidget_4)
+        self.f5.setObjectName(u"f5")
+        sizePolicy1.setHeightForWidth(self.f5.sizePolicy().hasHeightForWidth())
+        self.f5.setSizePolicy(sizePolicy1)
+        self.f5.setFont(font)
 
-        self.grid4.addWidget(self.e5, 0, 0, 1, 1)
+        self.grid4.addWidget(self.f5, 0, 1, 1, 1)
 
         self.e7 = QPushButton(self.gridLayoutWidget_4)
         self.e7.setObjectName(u"e7")
@@ -505,13 +506,13 @@ class Ui_MainWindow(object):
 
         self.grid4.addWidget(self.e6, 1, 0, 1, 1)
 
-        self.e8 = QPushButton(self.gridLayoutWidget_4)
-        self.e8.setObjectName(u"e8")
-        sizePolicy1.setHeightForWidth(self.e8.sizePolicy().hasHeightForWidth())
-        self.e8.setSizePolicy(sizePolicy1)
-        self.e8.setFont(font)
+        self.f8 = QPushButton(self.gridLayoutWidget_4)
+        self.f8.setObjectName(u"f8")
+        sizePolicy1.setHeightForWidth(self.f8.sizePolicy().hasHeightForWidth())
+        self.f8.setSizePolicy(sizePolicy1)
+        self.f8.setFont(font)
 
-        self.grid4.addWidget(self.e8, 3, 0, 1, 1)
+        self.grid4.addWidget(self.f8, 3, 1, 1, 1)
 
         self.h5 = QPushButton(self.gridLayoutWidget_4)
         self.h5.setObjectName(u"h5")
@@ -521,14 +522,6 @@ class Ui_MainWindow(object):
 
         self.grid4.addWidget(self.h5, 0, 3, 1, 1)
 
-        self.f6 = QPushButton(self.gridLayoutWidget_4)
-        self.f6.setObjectName(u"f6")
-        sizePolicy1.setHeightForWidth(self.f6.sizePolicy().hasHeightForWidth())
-        self.f6.setSizePolicy(sizePolicy1)
-        self.f6.setFont(font)
-
-        self.grid4.addWidget(self.f6, 1, 1, 1, 1)
-
         self.f7 = QPushButton(self.gridLayoutWidget_4)
         self.f7.setObjectName(u"f7")
         sizePolicy1.setHeightForWidth(self.f7.sizePolicy().hasHeightForWidth())
@@ -537,21 +530,29 @@ class Ui_MainWindow(object):
 
         self.grid4.addWidget(self.f7, 2, 1, 1, 1)
 
-        self.f8 = QPushButton(self.gridLayoutWidget_4)
-        self.f8.setObjectName(u"f8")
-        sizePolicy1.setHeightForWidth(self.f8.sizePolicy().hasHeightForWidth())
-        self.f8.setSizePolicy(sizePolicy1)
-        self.f8.setFont(font)
+        self.e8 = QPushButton(self.gridLayoutWidget_4)
+        self.e8.setObjectName(u"e8")
+        sizePolicy1.setHeightForWidth(self.e8.sizePolicy().hasHeightForWidth())
+        self.e8.setSizePolicy(sizePolicy1)
+        self.e8.setFont(font)
 
-        self.grid4.addWidget(self.f8, 3, 1, 1, 1)
+        self.grid4.addWidget(self.e8, 3, 0, 1, 1)
 
-        self.g6 = QPushButton(self.gridLayoutWidget_4)
-        self.g6.setObjectName(u"g6")
-        sizePolicy1.setHeightForWidth(self.g6.sizePolicy().hasHeightForWidth())
-        self.g6.setSizePolicy(sizePolicy1)
-        self.g6.setFont(font)
+        self.f6 = QPushButton(self.gridLayoutWidget_4)
+        self.f6.setObjectName(u"f6")
+        sizePolicy1.setHeightForWidth(self.f6.sizePolicy().hasHeightForWidth())
+        self.f6.setSizePolicy(sizePolicy1)
+        self.f6.setFont(font)
 
-        self.grid4.addWidget(self.g6, 1, 2, 1, 1)
+        self.grid4.addWidget(self.f6, 1, 1, 1, 1)
+
+        self.h7 = QPushButton(self.gridLayoutWidget_4)
+        self.h7.setObjectName(u"h7")
+        sizePolicy1.setHeightForWidth(self.h7.sizePolicy().hasHeightForWidth())
+        self.h7.setSizePolicy(sizePolicy1)
+        self.h7.setFont(font)
+
+        self.grid4.addWidget(self.h7, 2, 3, 1, 1)
 
         self.g7 = QPushButton(self.gridLayoutWidget_4)
         self.g7.setObjectName(u"g7")
@@ -561,14 +562,6 @@ class Ui_MainWindow(object):
 
         self.grid4.addWidget(self.g7, 2, 2, 1, 1)
 
-        self.g8 = QPushButton(self.gridLayoutWidget_4)
-        self.g8.setObjectName(u"g8")
-        sizePolicy1.setHeightForWidth(self.g8.sizePolicy().hasHeightForWidth())
-        self.g8.setSizePolicy(sizePolicy1)
-        self.g8.setFont(font)
-
-        self.grid4.addWidget(self.g8, 3, 2, 1, 1)
-
         self.h6 = QPushButton(self.gridLayoutWidget_4)
         self.h6.setObjectName(u"h6")
         sizePolicy1.setHeightForWidth(self.h6.sizePolicy().hasHeightForWidth())
@@ -577,13 +570,21 @@ class Ui_MainWindow(object):
 
         self.grid4.addWidget(self.h6, 1, 3, 1, 1)
 
-        self.h7 = QPushButton(self.gridLayoutWidget_4)
-        self.h7.setObjectName(u"h7")
-        sizePolicy1.setHeightForWidth(self.h7.sizePolicy().hasHeightForWidth())
-        self.h7.setSizePolicy(sizePolicy1)
-        self.h7.setFont(font)
+        self.g6 = QPushButton(self.gridLayoutWidget_4)
+        self.g6.setObjectName(u"g6")
+        sizePolicy1.setHeightForWidth(self.g6.sizePolicy().hasHeightForWidth())
+        self.g6.setSizePolicy(sizePolicy1)
+        self.g6.setFont(font)
 
-        self.grid4.addWidget(self.h7, 2, 3, 1, 1)
+        self.grid4.addWidget(self.g6, 1, 2, 1, 1)
+
+        self.g8 = QPushButton(self.gridLayoutWidget_4)
+        self.g8.setObjectName(u"g8")
+        sizePolicy1.setHeightForWidth(self.g8.sizePolicy().hasHeightForWidth())
+        self.g8.setSizePolicy(sizePolicy1)
+        self.g8.setFont(font)
+
+        self.grid4.addWidget(self.g8, 3, 2, 1, 1)
 
         self.h8 = QPushButton(self.gridLayoutWidget_4)
         self.h8.setObjectName(u"h8")
@@ -858,15 +859,24 @@ class Ui_MainWindow(object):
 
         self.GameInfoLabel = QLabel(self.centralwidget)
         self.GameInfoLabel.setObjectName(u"GameInfoLabel")
-        self.GameInfoLabel.setGeometry(QRect(990, 430, 271, 71))
+        self.GameInfoLabel.setGeometry(QRect(1000, 530, 271, 71))
         font3 = QFont()
-        font3.setPointSize(16)
+        font3.setFamilies([u"Consolas"])
+        font3.setPointSize(18)
         self.GameInfoLabel.setFont(font3)
         self.GameInfoLabel.setAlignment(Qt.AlignCenter)
         self.reset_button = QPushButton(self.centralwidget)
         self.reset_button.setObjectName(u"reset_button")
-        self.reset_button.setGeometry(QRect(1020, 520, 211, 51))
-        self.reset_button.setFont(font3)
+        self.reset_button.setGeometry(QRect(1030, 460, 211, 51))
+        font4 = QFont()
+        font4.setPointSize(16)
+        self.reset_button.setFont(font4)
+        self.HintLabel = QLabel(self.centralwidget)
+        self.HintLabel.setObjectName(u"HintLabel")
+        self.HintLabel.setGeometry(QRect(1020, 80, 241, 201))
+        font5 = QFont()
+        font5.setFamilies([u"Consolas"])
+        self.HintLabel.setFont(font5)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -884,134 +894,70 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate(
             "MainWindow", u"MainWindow", None))
-        self.b1.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.c1.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.a1.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.a3.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.a2.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.a4.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.b2.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.b3.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.b4.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.c2.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.c3.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.c4.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.d2.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.d3.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.d4.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.d1.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.g3.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.g4.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.h3.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.h2.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.h4.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.e3.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.e2.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.g1.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.f2.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.f3.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.f4.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.g2.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.e4.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.h1.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.f1.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.e1.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.b5.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.c5.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.a5.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.a7.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.a6.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.a8.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.b6.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.b7.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.b8.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.c6.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.c7.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.c8.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.d6.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.d7.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.d8.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.d5.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.f5.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.g5.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.e5.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.e7.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.e6.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.e8.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.h5.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.f6.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.f7.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.f8.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.g6.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.g7.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.g8.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.h6.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.h7.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
-        self.h8.setText(QCoreApplication.translate(
-            "MainWindow", u"Button", None))
+        self.b1.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.c1.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.a1.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.a3.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.a2.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.a4.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.b2.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.b3.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.b4.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.c2.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.c3.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.c4.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.d2.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.d3.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.d4.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.d1.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.g3.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.g4.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.h3.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.h2.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.h4.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.e3.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.e2.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.g1.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.f2.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.f3.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.f4.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.g2.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.e4.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.h1.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.f1.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.e1.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.b5.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.c5.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.a5.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.a7.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.a6.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.a8.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.b6.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.b7.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.b8.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.c6.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.c7.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.c8.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.d6.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.d7.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.d8.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.d5.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.e5.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.g5.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.f5.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.e7.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.e6.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.f8.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.h5.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.f7.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.e8.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.f6.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.h7.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.g7.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.h6.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.g6.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.g8.setText(QCoreApplication.translate("MainWindow", u"N", None))
+        self.h8.setText(QCoreApplication.translate("MainWindow", u"N", None))
         self.label_4.setText(
             QCoreApplication.translate("MainWindow", u"A", None))
         self.label_3.setText(
@@ -1080,4 +1026,6 @@ class Ui_MainWindow(object):
             "MainWindow", u"Black Gose First", None))
         self.reset_button.setText(QCoreApplication.translate(
             "MainWindow", u"Reset Game", None))
+        self.HintLabel.setText(QCoreApplication.translate(
+            "MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt;\">Hints:</span></p><p><span style=\" font-size:16pt;\">N: Not Setted</span></p><p><span style=\" font-size:16pt;\">B: Black Piece</span></p><p><span style=\" font-size:16pt;\">W: White Piece</span></p></body></html>", None))
     # retranslateUi

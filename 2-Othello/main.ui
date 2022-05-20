@@ -37,7 +37,8 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <family>Consolas</family>
+      <pointsize>28</pointsize>
      </font>
     </property>
     <layout class="QGridLayout" name="grid2">
@@ -51,11 +52,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -69,11 +71,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -87,11 +90,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -105,11 +109,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -123,11 +128,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -141,11 +147,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -159,11 +166,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -177,11 +185,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -195,11 +204,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -213,11 +223,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -231,11 +242,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -249,11 +261,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -267,11 +280,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -285,11 +299,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -303,11 +318,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -321,11 +337,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -348,7 +365,8 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <family>Consolas</family>
+      <pointsize>28</pointsize>
      </font>
     </property>
     <layout class="QGridLayout" name="grid1">
@@ -362,11 +380,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -380,11 +399,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -398,11 +418,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -416,11 +437,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -434,11 +456,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -452,11 +475,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -470,11 +494,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -488,11 +513,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -506,11 +532,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -524,11 +551,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -542,11 +570,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -560,11 +589,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -578,7 +608,8 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="focusPolicy">
@@ -588,7 +619,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
        <property name="checkable">
         <bool>false</bool>
@@ -605,11 +636,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -623,11 +655,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -641,11 +674,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -668,7 +702,8 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <family>Consolas</family>
+      <pointsize>28</pointsize>
      </font>
     </property>
     <layout class="QGridLayout" name="grid3">
@@ -682,11 +717,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -700,11 +736,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -718,11 +755,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -736,11 +774,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -754,11 +793,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -772,11 +812,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -790,11 +831,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -808,11 +850,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -826,11 +869,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -844,11 +888,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -862,11 +907,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -880,11 +926,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -898,11 +945,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -916,11 +964,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -934,11 +983,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -952,11 +1002,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -979,12 +1030,13 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <family>Consolas</family>
+      <pointsize>28</pointsize>
      </font>
     </property>
     <layout class="QGridLayout" name="grid4">
-     <item row="0" column="1">
-      <widget class="QPushButton" name="f5">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="e5">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -993,11 +1045,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -1011,16 +1064,17 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="e5">
+     <item row="0" column="1">
+      <widget class="QPushButton" name="f5">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -1029,11 +1083,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -1047,11 +1102,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -1065,83 +1121,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QPushButton" name="e8">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Button</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="h5">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Button</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="f6">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Button</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QPushButton" name="f7">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -1155,16 +1140,17 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="g6">
+     <item row="0" column="3">
+      <widget class="QPushButton" name="h5">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -1173,16 +1159,17 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="2">
-      <widget class="QPushButton" name="g7">
+     <item row="2" column="1">
+      <widget class="QPushButton" name="f7">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -1191,16 +1178,17 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="g8">
+     <item row="3" column="0">
+      <widget class="QPushButton" name="e8">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -1209,16 +1197,17 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="3">
-      <widget class="QPushButton" name="h6">
+     <item row="1" column="1">
+      <widget class="QPushButton" name="f6">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -1227,11 +1216,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -1245,11 +1235,88 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="g7">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>N</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="h6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>N</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="g6">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>N</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="g8">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -1263,11 +1330,12 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <family>Consolas</family>
+         <pointsize>28</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Button</string>
+        <string>N</string>
        </property>
       </widget>
      </item>
@@ -1894,15 +1962,16 @@
    <widget class="QLabel" name="GameInfoLabel">
     <property name="geometry">
      <rect>
-      <x>990</x>
-      <y>430</y>
+      <x>1000</x>
+      <y>530</y>
       <width>271</width>
       <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <family>Consolas</family>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="text">
@@ -1915,8 +1984,8 @@
    <widget class="QPushButton" name="reset_button">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>520</y>
+      <x>1030</x>
+      <y>460</y>
       <width>211</width>
       <height>51</height>
      </rect>
@@ -1928,6 +1997,24 @@
     </property>
     <property name="text">
      <string>Reset Game</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="HintLabel">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>80</y>
+      <width>241</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Hints:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;N: Not Setted&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;B: Black Piece&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;W: White Piece&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
