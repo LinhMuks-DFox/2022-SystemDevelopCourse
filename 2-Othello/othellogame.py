@@ -2,6 +2,7 @@ import os
 import platform
 import sys
 from enum import Enum
+from collections import Counter
 
 import PySide6
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
@@ -14,21 +15,27 @@ if platform.system() == "Windows":
     plugin_path = os.path.join(dirname, 'plugins', 'platforms')
     os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
 
+# Pragma region Constants
 PIECE_BUTTON_DEFAULT_STYLE_SHEET = "background-color:light gray;"
-PIECE_BUTTON_BLACK_STYLE_SHEET = "background-color:Black; color: White" # set font color to white
+PIECE_BUTTON_BLACK_STYLE_SHEET = "background-color:Black; color: White"  # set font color to white
 PIECE_BUTTON_WHITE_STYLE_SHEET = "background-color:White; color: Black"
 DEBUG = True
+# Pragma region Constants
+
 class Color(Enum):
     Black = 0
     White = 1
     NotSet = 2
+
     def __str__(self):
         return f"{self.name}"
+
     __repr__ = __str__
 
-class OthelloGameWindows(QMainWindow):
+
+class OthelloGame(QMainWindow):
     def __init__(self):
-        super(OthelloGameWindows, self).__init__()
+        super(OthelloGame, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.piece_buttons = [
@@ -37,35 +44,43 @@ class OthelloGameWindows(QMainWindow):
             ]
         ]
         # set piece_buttons's click function
-        self.ui.reset_button.clicked.connect(self.reset_game)
+        self.ui.reset_button.clicked.connect(self._reset_game)
         self._current_player = Color.Black
         self._game_check_board = [[Color.NotSet for _ in range(8)] for _ in range(8)]
         # set click function to all piece_button
         for pb in self.piece_buttons:
             pb.clicked.connect(
-                (lambda _=None, pb=pb: self.click(
+                (lambda _=None, pb=pb: self._click(
                     pb.objectName()))
             )
-        self.black_p_cnt, self.white_p_cnt = 0, 0
-        self.reset_game()
+        self.pressed_button_cnt = 0
+        self._reset_game()
 
     def _foreach_piece_button(self, func):
         for pb in self.piece_buttons:
             func(pb)
 
-    def reset_game(self):
+    def _reset_game(self):
         self.ui.GameInfoLabel.setText("Reset/Init game!")
+
         def _reset_ui(pb: QPushButton):
             pb.setText("")
             pb.setEnabled(True)
             pb.setStyleSheet(PIECE_BUTTON_DEFAULT_STYLE_SHEET)
+
         self._foreach_piece_button(_reset_ui)
         self._set_piece("d4", Color.White)
         self._set_piece("e5", Color.White)
         self._set_piece("e4", Color.Black)
         self._set_piece("d5", Color.Black)
+        self.pressed_button_cnt += 4
+        self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
+        self.ui.BlackPieceCounter.setText(f"Black: {2}")
+        self.ui.WhitePieceCounter.setText(f"White: {2}")
+    def _click(self, pos: str):
+        if self.pressed_button_cnt == 64:
+            self._check_winner()
 
-    def click(self, pos: str):
         self._set_piece(pos, self._current_player)
         if self._current_player == Color.Black:
             self.ui.GameInfoLabel.setText("White Next")
@@ -74,6 +89,10 @@ class OthelloGameWindows(QMainWindow):
 
         # flip player
         self._current_player = Color.White if self._current_player == Color.Black else Color.Black
+        self.pressed_button_cnt += 1
+        self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
+        self.ui.BlackPieceCounter.setText(f"Black: {self._get_piece_count(Color.Black)}")
+        self.ui.WhitePieceCounter.setText(f"White: {self._get_piece_count(Color.White)}")
 
         if DEBUG:
             self._print_game_board()
@@ -104,28 +123,42 @@ class OthelloGameWindows(QMainWindow):
             return True
 
     @staticmethod
-    def _get_indexes(position: str):
+    def _get_indexes(position: str) -> tuple:
+        """
+        Convert Button's name to 2D array indexes
+        a1 -> (0, 0)
+        :param position: [a-h][1-8]
+        :return: a tuple of index in (i row, j colum)
+        """
         if len(position) > 2:
             raise ValueError(f"Argument {position} is invalid.")
         return int(position[1]) - 1, "abcdefgh".index(position[0])  # (row, col)
 
-    def get_color(self, pos: str) -> Color:
+    def _get_color(self, pos: str) -> Color:
+        """
+        Get the color of a position
+        :param pos: position
+        :return: Color
+        """
         i, j = self._get_indexes(pos)
         return ret if (ret := self._game_check_board[i][j]) is not None else Color.NotSet
 
     # Pragma region Debug Functions:
     def _print_game_board(self):
         print("".join(["=" for _ in range(88)]))
-        print(f"count of white: {self.white_p_cnt}")
-        print(f"count of black: {self.black_p_cnt}")
+        print(f"Total pressed button: {self.pressed_button_cnt}")
         print("\n".join([str(row) for row in self._game_check_board]))
         print("".join(["=" for _ in range(88)]))
     # Pragma region Debug Functions
 
-    def get_piece_count(self, color: Color):
-        pass
+    def _get_piece_count(self, color: Color) -> int:
+        return sum([Counter(row)[color] for row in self._game_check_board])
+
+    def _check_winner(self) -> Color:
+        print("Check Winner!")
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    OthelloGameWindows().show()
+    OthelloGame().show()
     sys.exit(app.exec())
