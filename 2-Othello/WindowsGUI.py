@@ -877,6 +877,23 @@ class Ui_MainWindow(object):
         font5 = QFont()
         font5.setFamilies([u"Consolas"])
         self.HintLabel.setFont(font5)
+        self.TotalCounter = QLabel(self.centralwidget)
+        self.TotalCounter.setObjectName(u"TotalCounter")
+        self.TotalCounter.setGeometry(QRect(1010, 640, 171, 51))
+        font6 = QFont()
+        font6.setFamilies([u"Consolas"])
+        font6.setPointSize(17)
+        self.TotalCounter.setFont(font6)
+        self.TotalCounter.setAlignment(
+            Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
+        self.BlackPieceCounter = QLabel(self.centralwidget)
+        self.BlackPieceCounter.setObjectName(u"BlackPieceCounter")
+        self.BlackPieceCounter.setGeometry(QRect(1010, 700, 181, 51))
+        self.BlackPieceCounter.setFont(font6)
+        self.WhitePieceCounter = QLabel(self.centralwidget)
+        self.WhitePieceCounter.setObjectName(u"WhitePieceCounter")
+        self.WhitePieceCounter.setGeometry(QRect(1010, 760, 181, 51))
+        self.WhitePieceCounter.setFont(font6)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -1028,4 +1045,10 @@ class Ui_MainWindow(object):
             "MainWindow", u"Reset Game", None))
         self.HintLabel.setText(QCoreApplication.translate(
             "MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt;\">Hints:</span></p><p><span style=\" font-size:16pt;\">N: Not Setted</span></p><p><span style=\" font-size:16pt;\">B: Black Piece</span></p><p><span style=\" font-size:16pt;\">W: White Piece</span></p></body></html>", None))
+        self.TotalCounter.setText(QCoreApplication.translate(
+            "MainWindow", u"Total: 0", None))
+        self.BlackPieceCounter.setText(
+            QCoreApplication.translate("MainWindow", u"Black: 0", None))
+        self.WhitePieceCounter.setText(
+            QCoreApplication.translate("MainWindow", u"White: 0", None))
     # retranslateUi
