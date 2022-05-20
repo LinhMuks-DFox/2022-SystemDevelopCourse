@@ -23,7 +23,7 @@ if platform.system() == "Windows":
 PIECE_BUTTON_DEFAULT_STYLE_SHEET = "background-color: light gray;"
 PIECE_BUTTON_BLACK_STYLE_SHEET = "background-color: #FFFFFF; color: #000000"  # set font color to white
 PIECE_BUTTON_WHITE_STYLE_SHEET = "background-color: #000000; color: #FFFFFF"
-PIECE_BUTTON_VALID_PLACE_STYLE_SHEET = "background-color: #66CCFF;"
+PIECE_BUTTON_VALID_PLACE_STYLE_SHEET = "background-color: #66CCFF; color: #FFFFFF"
 DEBUG = True
 
 
