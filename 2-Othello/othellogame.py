@@ -1,13 +1,17 @@
+'''
+Author: Mux
+'''
+
+import collections
+import enum
 import os
 import platform
 import sys
-from enum import Enum
-from collections import Counter
 
 import PySide6
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 
-from WindowsGUI import Ui_MainWindow
+import WindowsGUI
 
 # Configs
 if platform.system() == "Windows":
@@ -20,9 +24,11 @@ PIECE_BUTTON_DEFAULT_STYLE_SHEET = "background-color:light gray;"
 PIECE_BUTTON_BLACK_STYLE_SHEET = "background-color:Black; color: White"  # set font color to white
 PIECE_BUTTON_WHITE_STYLE_SHEET = "background-color:White; color: Black"
 DEBUG = True
+
+
 # Pragma region Constants
 
-class Color(Enum):
+class Color(enum.Enum):
     Black = 0
     White = 1
     NotSet = 2
@@ -36,7 +42,7 @@ class Color(Enum):
 class OthelloGame(QMainWindow):
     def __init__(self):
         super(OthelloGame, self).__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = WindowsGUI.Ui_MainWindow()
         self.ui.setupUi(self)
         self.piece_buttons = [
             getattr(self.ui, attrname) for attrname in [
@@ -49,10 +55,7 @@ class OthelloGame(QMainWindow):
         self._game_check_board = [[Color.NotSet for _ in range(8)] for _ in range(8)]
         # set click function to all piece_button
         for pb in self.piece_buttons:
-            pb.clicked.connect(
-                (lambda _=None, pb=pb: self._click(
-                    pb.objectName()))
-            )
+            pb.clicked.connect((lambda _=None, pb=pb: self._click(pb.objectName())))
         self.pressed_button_cnt = 0
         self._reset_game()
 
@@ -73,10 +76,11 @@ class OthelloGame(QMainWindow):
         self._set_piece("e5", Color.White)
         self._set_piece("e4", Color.Black)
         self._set_piece("d5", Color.Black)
-        self.pressed_button_cnt += 4
+        self.pressed_button_cnt = 4
         self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
         self.ui.BlackPieceCounter.setText(f"Black: {2}")
         self.ui.WhitePieceCounter.setText(f"White: {2}")
+
     def _click(self, pos: str):
         if self.pressed_button_cnt == 64:
             self._check_winner()
@@ -114,6 +118,7 @@ class OthelloGame(QMainWindow):
             cur_pb.setText("W")
             cur_pb.setStyleSheet(PIECE_BUTTON_WHITE_STYLE_SHEET)
         cur_pb.setEnabled(False)
+
         # Set game check board after click
         i, j = self._get_indexes(position)
         if self._game_check_board[i][j] is not Color.NotSet:
@@ -149,16 +154,20 @@ class OthelloGame(QMainWindow):
         print(f"Total pressed button: {self.pressed_button_cnt}")
         print("\n".join([str(row) for row in self._game_check_board]))
         print("".join(["=" for _ in range(88)]))
+
     # Pragma region Debug Functions
 
     def _get_piece_count(self, color: Color) -> int:
-        return sum([Counter(row)[color] for row in self._game_check_board])
+        return sum([collections.Counter(row)[color] for row in self._game_check_board])
 
     def _check_winner(self) -> Color:
-        print("Check Winner!")
+        return Color.Black if self._get_piece_count(Color.Black) > self._get_piece_count(Color.White) else Color.White
 
 
 if __name__ == "__main__":
+    if sys.version_info[1] < 8:
+        print("Python version should greater than 3.8")
+        exit(-1)
     app = QApplication(sys.argv)
     OthelloGame().show()
     sys.exit(app.exec())
