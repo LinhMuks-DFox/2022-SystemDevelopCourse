@@ -21,8 +21,9 @@ if platform.system() == "Windows":
 
 # Pragma region Constants
 PIECE_BUTTON_DEFAULT_STYLE_SHEET = "background-color: light gray;"
-PIECE_BUTTON_BLACK_STYLE_SHEET = "background-color: black; color: white"  # set font color to white
-PIECE_BUTTON_WHITE_STYLE_SHEET = "background-color: white; color: black"
+PIECE_BUTTON_BLACK_STYLE_SHEET = "background-color: #FFFFFF; color: #000000"  # set font color to white
+PIECE_BUTTON_WHITE_STYLE_SHEET = "background-color: #000000; color: #FFFFFF"
+PIECE_BUTTON_VALID_PLACE_STYLE_SHEET = "background-color: #66CCFF;"
 DEBUG = True
 
 
@@ -59,8 +60,8 @@ class OthelloGame(QMainWindow):
         self.pressed_button_cnt = 0
         self._reset_game()
 
-    def _foreach_piece_button(self, func):
-        for pb in self.piece_buttons:
+    def _foreach_piece_button(self, func, **kwargs):
+        for pb in kwargs["btn_list"] if len(kwargs) != 0 else self.piece_buttons:
             func(pb)
 
     def _reset_game(self):
@@ -80,12 +81,25 @@ class OthelloGame(QMainWindow):
         self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
         self.ui.BlackPieceCounter.setText(f"Black: {2}")
         self.ui.WhitePieceCounter.setText(f"White: {2}")
+        self._rander_valid_place(Color.Black)
 
     def _click(self, pos: str):
+
+        # Check if piece is placed at a valid position
+        pre_valid_place = self._get_valid_place(self._current_player)
+        if pos not in pre_valid_place:
+            return
+
+        # Set piece
+        self._set_piece(pos, self._current_player)
+
+        # check if winner occurred
         if self.pressed_button_cnt == 64:
             self._check_winner()
 
-        self._set_piece(pos, self._current_player)
+        self._rander_valid_place(self._current_player)
+
+        # Change next player message
         if self._current_player == Color.Black:
             self.ui.GameInfoLabel.setText("White Next")
         else:
@@ -163,6 +177,15 @@ class OthelloGame(QMainWindow):
     def _check_winner(self) -> Color:
         return Color.Black if self._get_piece_count(Color.Black) > self._get_piece_count(Color.White) else Color.White
 
+    def _get_valid_place(self, color: Color) -> list:
+        return [f"{x}{y}" for x in "abcdefgh" for y in range(1, 9)]
+
+    def _rander_valid_place(self, color: Color):
+        def bunt_rander(pb: QPushButton):
+            pass
+            # pb.setStyleSheet(PIECE_BUTTON_VALID_PLACE_STYLE_SHEET)
+        self._foreach_piece_button(bunt_rander, btn_list=[getattr(self.ui, name)
+                                                          for name in self._get_valid_place(color)])
 
 if __name__ == "__main__":
     if sys.version_info[1] < 8:
