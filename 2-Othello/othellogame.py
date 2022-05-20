@@ -1,6 +1,6 @@
-'''
+"""
 Author: Mux
-'''
+"""
 
 import collections
 import enum
@@ -14,10 +14,10 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 import WindowsGUI
 
 # Configs
-if platform.system() == "Windows":
-    dirname = os.path.dirname(PySide6.__file__)
-    plugin_path = os.path.join(dirname, 'plugins', 'platforms')
-    os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
+# if platform.system() == "Windows":
+dirname = os.path.dirname(PySide6.__file__)
+plugin_path = os.path.join(dirname, 'plugins', 'platforms')
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
 
 # Pragma region Constants
 PIECE_BUTTON_DEFAULT_STYLE_SHEET = "background-color:light gray;"
