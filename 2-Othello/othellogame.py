@@ -20,9 +20,9 @@ if platform.system() == "Windows":
     os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = plugin_path
 
 # Pragma region Constants
-PIECE_BUTTON_DEFAULT_STYLE_SHEET = "background-color:light gray;"
-PIECE_BUTTON_BLACK_STYLE_SHEET = "background-color:Black; color: White"  # set font color to white
-PIECE_BUTTON_WHITE_STYLE_SHEET = "background-color:White; color: Black"
+PIECE_BUTTON_DEFAULT_STYLE_SHEET = "background-color: light gray;"
+PIECE_BUTTON_BLACK_STYLE_SHEET = "background-color: black; color: white"  # set font color to white
+PIECE_BUTTON_WHITE_STYLE_SHEET = "background-color: white; color: black"
 DEBUG = True
 
 
