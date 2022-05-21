@@ -82,22 +82,28 @@ class OthelloGame(QMainWindow):
         self.ui.BlackPieceCounter.setText(f"Black: {2}")
         self.ui.WhitePieceCounter.setText(f"White: {2}")
         self._rander_valid_place(Color.Black)
-
+    def _pb_enable(self, b):
+        def _able(pb: QPushButton):
+            pb.setEnabled(b)
+        self._foreach_piece_button(_able)
     def _click(self, pos: str):
 
-        # Check if piece is placed at a valid position
-        pre_valid_place = self._get_valid_place(self._current_player)
-        if pos not in pre_valid_place:
-            return
+        # TODO: Check if piece is placed at a valid position
+        # pre_valid_place = self._get_valid_place(self._current_player)
+        # if pos not in pre_valid_place:
+        #     return
 
         # Set piece
         self._set_piece(pos, self._current_player)
 
         # check if winner occurred
-        if self.pressed_button_cnt == 64:
-            self._check_winner()
+        if 64 - self.pressed_button_cnt == 0:
+            self.ui.GameInfoLabel.setText(f"Winner is: {self._check_winner()}!")
+            self._pb_enable(False)
+            return
 
-        self._rander_valid_place(self._current_player)
+        # TODO: Rander valid place here
+        # self._rander_valid_place(self._current_player)
 
         # Change next player message
         if self._current_player == Color.Black:
@@ -107,7 +113,6 @@ class OthelloGame(QMainWindow):
 
         # flip player
         self._current_player = Color.White if self._current_player == Color.Black else Color.Black
-        self.pressed_button_cnt += 1
         self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
         self.ui.BlackPieceCounter.setText(f"Black: {self._get_piece_count(Color.Black)}")
         self.ui.WhitePieceCounter.setText(f"White: {self._get_piece_count(Color.White)}")
@@ -115,7 +120,7 @@ class OthelloGame(QMainWindow):
         if DEBUG:
             self._print_game_board()
 
-    def _set_piece(self, position: str, color: Color) -> bool:
+    def _set_piece(self, position: str, color: Color):
         '''
         1. To set game_board
         2. To set ui
@@ -123,23 +128,32 @@ class OthelloGame(QMainWindow):
         :param color:
         :return:
         '''
+        # For flip color:
+        i, j = self._get_indexes(position)
+        flip = False
+        if self._game_check_board[i][j] is Color.NotSet:
+            self._game_check_board[i][j] = color
+        else:
+            self._game_check_board[i][j] = Color.Black if color == Color.White else Color.White
+            flip = True
+
         # Set UI after click
         cur_pb = getattr(self.ui, position)
-        if color == Color.Black:
-            cur_pb.setText("B")
-            cur_pb.setStyleSheet(PIECE_BUTTON_BLACK_STYLE_SHEET)
+        if not flip:
+            if color == Color.Black:
+                cur_pb.setText("B")
+                cur_pb.setStyleSheet(PIECE_BUTTON_BLACK_STYLE_SHEET)
+            else:
+                cur_pb.setText("W")
+                cur_pb.setStyleSheet(PIECE_BUTTON_WHITE_STYLE_SHEET)
+            self.pressed_button_cnt += 1
         else:
-            cur_pb.setText("W")
-            cur_pb.setStyleSheet(PIECE_BUTTON_WHITE_STYLE_SHEET)
-        cur_pb.setEnabled(False)
-
-        # Set game check board after click
-        i, j = self._get_indexes(position)
-        if self._game_check_board[i][j] is not Color.NotSet:
-            return False
-        else:
-            self._game_check_board[i][j] = color
-            return True
+            if color == Color.Black:
+                cur_pb.setText("W")
+                cur_pb.setStyleSheet(PIECE_BUTTON_WHITE_STYLE_SHEET)
+            else:
+                cur_pb.setText("B")
+                cur_pb.setStyleSheet(PIECE_BUTTON_BLACK_STYLE_SHEET)
 
     @staticmethod
     def _get_indexes(position: str) -> tuple:
@@ -166,6 +180,7 @@ class OthelloGame(QMainWindow):
     def _print_game_board(self):
         print("".join(["=" for _ in range(88)]))
         print(f"Total pressed button: {self.pressed_button_cnt}")
+        print(f"Total unpressed: {self._get_piece_count(Color.NotSet)}")
         print("\n".join([str(row) for row in self._game_check_board]))
         print("".join(["=" for _ in range(88)]))
 
