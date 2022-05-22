@@ -87,8 +87,8 @@ class OthelloGame(QMainWindow):
 
     def click(self, pos: str):
 
-        pre_valid_place = self.get_valid_place(self._current_player)
-        if pos not in pre_valid_place:
+        valid_place = self.get_valid_place(self._current_player)
+        if pos not in valid_place:
             return
 
         # Set piece
@@ -187,11 +187,10 @@ class OthelloGame(QMainWindow):
         for i, r in enumerate(self._game_check_board):
             for j, c in enumerate(r):
                 if c == target:
-                    ret.append(f"{'abcdefgh'[i]}{j+1}")
+                    ret.append(f"{'abcdefgh'[i]}{j + 1}")
         return ret
 
-    # TODO: Complete this method
-    def get_valid_place(self, color: Color) -> list:
+    def get_valid_place(self, color: Color) -> [str, ...]:
         """
         找到每一个棋子的周围的位置s，对每一个位置进行一次是否可以放入棋子的判断
         可以就放入返回的列表中
@@ -212,13 +211,18 @@ class OthelloGame(QMainWindow):
             # 对于没有被占用的空间来说，
             for i in around_move_list:
                 if self.get_color_of_index(around_space[around_move[i]]) != Color.NotSet and \
-                    self.get_color_of_index(around_space[around_move[i]]) != color:
+                        self.get_color_of_index(around_space[around_move[i]]) != color:
                     valid_place.append(i)
         return valid_place
 
     # TODO: Complete this method
-    def check_color_flip(self, pos):
-        pass
+    def check_color_flip(self, pos, color: Color):
+        idx_i, idx_j = self.string2indexes(pos)
+        flip_able = {}
+        up_all_items = lambda: [f"{pos[0]}{j}" for j in range(idx_j, 0, -1)]
+        down_all_items = lambda: [f"{pos[0]}{j}" for j in range(idx_j + 2, 9)]
+        left_all_items = lambda: [f"{'abcdefgh'[i]}{pos[1]}" for i in range(idx_i - 1, -1, -1)]
+        right_all_items = lambda: [f"{'abcdefgh'[i]}{pos[1]}" for i in range(idx_i + 1, 8)]
 
     def get_around(self, pos: str) -> [dict, dict]:
         row, col = int(pos[1]), pos[0]
@@ -285,16 +289,17 @@ class OthelloGame(QMainWindow):
         return [around, around_space]
 
     def re_rander_ui(self):
+
+        random_style = get_next_valid_place_random_style()
+
         def rander_valid_place(pb: QPushButton):
-            pb.setStyleSheet(PIECE_BUTTON_VALID_PLACE_STYLE_SHEET)
+            pb.setStyleSheet(random_style)
             pb.setText("V")
 
         def rander_nor(pb: QPushButton):
             color_of_bnt = self.get_color_of_index(pb.objectName())
-
             if color_of_bnt == Color.NotSet:
                 return
-
             pb.setText("W" if color_of_bnt == "W" else "B")
             pb.setStyleSheet(
                 PIECE_BUTTON_BLACK_STYLE_SHEET
@@ -318,5 +323,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     game = OthelloGame()
     game.show()
-    print(game.get_valid_place(Color.Black))
     sys.exit(app.exec())
