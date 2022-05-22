@@ -210,7 +210,7 @@ class OthelloGame(QMainWindow):
                     valid_place.append(i)
         return valid_place
 
-    # TODO: Complete this method
+    # Basically-done
     def check_color_flip(self, pos, color: Color):
         idx_i, idx_j = self.string2indexes(pos)
         should_be_detected_directions = self.get_around(pos)[1].keys()
