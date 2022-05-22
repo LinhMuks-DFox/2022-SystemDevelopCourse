@@ -95,25 +95,15 @@ class OthelloGame(QMainWindow):
         self.set_piece(pos, self._current_player)
         # check if winner occurred
         if 64 - self.pressed_button_cnt == 0:
-            self.ui.GameInfoLabel.setText(f"Winner is: {self.check_winner()}!")
-            self.pb_enable(False)
+            self.winner_occurred()
             return
-
-        # Change next player message
-        if self._current_player == Color.Black:
-            self.ui.GameInfoLabel.setText("White Next")
-        else:
-            self.ui.GameInfoLabel.setText("Black Next")
 
         # flip player
         self._current_player = Color.White if self._current_player == Color.Black else Color.Black
         self.re_rander_ui()
-        self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
-        self.ui.BlackPieceCounter.setText(f"Black: {self.count_color(Color.Black)}")
-        self.ui.WhitePieceCounter.setText(f"White: {self.count_color(Color.White)}")
-
-        if DEBUG:
-            self.print_game_board()
+    def winner_occurred(self):
+        self.ui.GameInfoLabel.setText(f"Winner is: {self.check_winner()}!")
+        self.pb_enable(False)
 
     def set_piece(self, position: str, color: Color):
         '''
@@ -289,7 +279,10 @@ class OthelloGame(QMainWindow):
         return [around, around_space]
 
     def re_rander_ui(self):
-
+        self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
+        self.ui.BlackPieceCounter.setText(f"Black: {self.count_color(Color.Black)}")
+        self.ui.WhitePieceCounter.setText(f"White: {self.count_color(Color.White)}")
+        self.ui.GameInfoLabel.setText(f"{self._current_player} Step")
         random_style = get_next_valid_place_random_style()
 
         def rander_valid_place(pb: QPushButton):
@@ -310,11 +303,6 @@ class OthelloGame(QMainWindow):
         self.foreach_piece_button(
             rander_nor
         )
-        self.foreach_piece_button(
-            rander_valid_place,
-            btn_list=[getattr(self.ui, name) for name in self.get_valid_place(self._current_player)]
-        )
-
 
 if __name__ == "__main__":
     if sys.version_info[1] < 8:
