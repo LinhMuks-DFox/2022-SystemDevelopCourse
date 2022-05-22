@@ -93,6 +93,11 @@ class OthelloGame(QMainWindow):
 
         # Set piece
         self.set_piece(pos, self._current_player)
+
+        # Flip Colors
+        self.check_color_flip(pos, self._current_player)
+        self.print_game_board()
+
         # check if winner occurred
         if 64 - self.pressed_button_cnt == 0:
             self.winner_occurred()
@@ -116,10 +121,8 @@ class OthelloGame(QMainWindow):
         '''
         # For flip color:
         i, j = self.string2indexes(position)
-        if self._game_check_board[i][j] is Color.NotSet:
-            self._game_check_board[i][j] = color
-        else:
-            self._game_check_board[i][j] = Color.Black if color == Color.White else Color.White
+
+        self._game_check_board[i][j] = color
 
         # Set UI after click
         cur_pb = getattr(self.ui, position)
@@ -190,32 +193,31 @@ class OthelloGame(QMainWindow):
         placed_color = self.get_placed_piece(color)
 
         for pc in placed_color:
-            around_move, around_space = self.get_around(pc)
-            around_move = {v: k for k, v in around_move.items()}
+            outer_around, inner_around = self.get_around(pc)
+            outer_around = {v: k for k, v in outer_around.items()}
             around_move_list = []
 
             # 去除已经被占用的
-            for i in around_move.keys():
+            for i in outer_around.keys():
                 if self.get_color_of_index(i) == Color.NotSet:
                     around_move_list.append(i)
 
             # 对于没有被占用的空间来说，
             for i in around_move_list:
-                if self.get_color_of_index(around_space[around_move[i]]) != Color.NotSet and \
-                        self.get_color_of_index(around_space[around_move[i]]) != color:
+                inner_color = self.get_color_of_index(inner_around[outer_around[i]])
+                if inner_color != Color.NotSet and inner_color != color:
                     valid_place.append(i)
         return valid_place
 
     # TODO: Complete this method
     def check_color_flip(self, pos, color: Color):
         idx_i, idx_j = self.string2indexes(pos)
-        flip_able = {}
         should_be_detected_directions = self.get_around(pos)[1].keys()
-
         u_all_items = lambda: [f"{pos[0]}{i}" for i in range(idx_i, 0, -1)]
         d_all_items = lambda: [f"{pos[0]}{i}" for i in range(idx_i + 2, 9)]
         l_all_items = lambda: [f"{'abcdefgh'[j]}{pos[1]}" for j in range(idx_j - 1, -1, -1)]
         r_all_items = lambda: [f"{'abcdefgh'[j]}{pos[1]}" for j in range(idx_j + 1, 8)]
+
         def ul_alL_items():
             ret = []
             i, j = idx_i, idx_j - 1
@@ -224,6 +226,7 @@ class OthelloGame(QMainWindow):
                 i -= 1
                 j -= 1
             return ret
+
         def ur_alL_items():
             ret = []
             i, j = idx_i, idx_j + 1
@@ -232,6 +235,7 @@ class OthelloGame(QMainWindow):
                 i -= 1
                 j += 1
             return ret
+
         def dl_all_items():
             ret = []
             i, j = idx_i + 2, idx_j - 1
@@ -240,6 +244,7 @@ class OthelloGame(QMainWindow):
                 i += 1
                 j -= 1
             return ret
+
         def dr_all_items():
             ret = []
             i, j = idx_i + 2, idx_j + 1
@@ -250,16 +255,38 @@ class OthelloGame(QMainWindow):
             return ret
 
         detect_directions_items = {
-            "u" : u_all_items,
-            "d" : d_all_items,
-            "l" : l_all_items,
-            "r" : r_all_items,
-            "ul" : ul_alL_items,
-            "ur" : ur_alL_items,
-            "dl" : dl_all_items,
-            "dr" : dr_all_items
+            "u": u_all_items,
+            "d": d_all_items,
+            "l": l_all_items,
+            "r": r_all_items,
+            "ul": ul_alL_items,
+            "ur": ur_alL_items,
+            "dl": dl_all_items,
+            "dr": dr_all_items
         }
 
+        should_be_flip_pieces = []
+
+        for direction in should_be_detected_directions:
+            # 找到边界
+            boarder = -1
+            for i, item in enumerate(items := detect_directions_items[direction]()):
+                cur_item_color = self.get_color_of_index(item)
+                if cur_item_color == color:
+                    boarder = i
+                    break
+                if cur_item_color == Color.NotSet:
+                    break
+
+            if boarder != -1:
+                should_be_flip_pieces += items[:boarder]
+            else:
+                continue
+
+        print(should_be_flip_pieces, f"should be set to {color}")
+
+        for p in should_be_flip_pieces:
+            self.set_piece(p, color)
 
     def get_around(self, pos: str) -> [dict, dict]:
         row, col = int(pos[1]), pos[0]
@@ -330,25 +357,29 @@ class OthelloGame(QMainWindow):
         self.ui.BlackPieceCounter.setText(f"Black: {self.count_color(Color.Black)}")
         self.ui.WhitePieceCounter.setText(f"White: {self.count_color(Color.White)}")
         self.ui.GameInfoLabel.setText(f"{self._current_player} Step")
-        random_style = get_next_valid_place_random_style()
-
-        def rander_valid_place(pb: QPushButton):
-            pb.setStyleSheet(random_style)
-            pb.setText("V")
 
         def rander_nor(pb: QPushButton):
             color_of_bnt = self.get_color_of_index(pb.objectName())
             if color_of_bnt == Color.NotSet:
-                return
-            pb.setText("W" if color_of_bnt == "W" else "B")
-            pb.setStyleSheet(
-                PIECE_BUTTON_BLACK_STYLE_SHEET
-                if color_of_bnt == Color.Black else
-                PIECE_BUTTON_WHITE_STYLE_SHEET
-            )
+                pb.setStyleSheet(PIECE_BUTTON_DEFAULT_STYLE_SHEET)
+                pb.setText("")
+            else:
+                pb.setText("W" if color_of_bnt == Color.White else "B")
+                pb.setStyleSheet(
+                    PIECE_BUTTON_BLACK_STYLE_SHEET
+                    if color_of_bnt == Color.Black else
+                    PIECE_BUTTON_WHITE_STYLE_SHEET
+                )
+
+        def rander_hint(pb: QPushButton):
+            pb.setText("V")
+            pb.setStyleSheet(PIECE_BUTTON_VALID_PLACE_STYLE_SHEET)
 
         self.foreach_piece_button(
             rander_nor
+        )
+        self.foreach_piece_button(
+            rander_hint, btn_list=[getattr(self.ui, name) for name in self.get_valid_place(self._current_player)]
         )
 
 
@@ -358,6 +389,12 @@ if __name__ == "__main__":
         exit(-1)
     app = QApplication(sys.argv)
     game = OthelloGame()
-    # game.show()
-    # sys.exit(app.exec())
-    game.check_color_flip("a1", Color.Black)
+    game.click("d3")
+    game.click("e3")
+    # print(game.get_valid_place(Color.Black))
+    # game.click("f3")
+    # game.click("f4")
+    # game.click("c3")
+    # a = 0
+    game.show()
+    sys.exit(app.exec())
