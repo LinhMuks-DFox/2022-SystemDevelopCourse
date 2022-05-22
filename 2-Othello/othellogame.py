@@ -101,6 +101,7 @@ class OthelloGame(QMainWindow):
         # flip player
         self._current_player = Color.White if self._current_player == Color.Black else Color.Black
         self.re_rander_ui()
+
     def winner_occurred(self):
         self.ui.GameInfoLabel.setText(f"Winner is: {self.check_winner()}!")
         self.pb_enable(False)
@@ -209,10 +210,56 @@ class OthelloGame(QMainWindow):
     def check_color_flip(self, pos, color: Color):
         idx_i, idx_j = self.string2indexes(pos)
         flip_able = {}
-        up_all_items = lambda: [f"{pos[0]}{j}" for j in range(idx_j, 0, -1)]
-        down_all_items = lambda: [f"{pos[0]}{j}" for j in range(idx_j + 2, 9)]
-        left_all_items = lambda: [f"{'abcdefgh'[i]}{pos[1]}" for i in range(idx_i - 1, -1, -1)]
-        right_all_items = lambda: [f"{'abcdefgh'[i]}{pos[1]}" for i in range(idx_i + 1, 8)]
+        should_be_detected_directions = self.get_around(pos)[1].keys()
+
+        u_all_items = lambda: [f"{pos[0]}{i}" for i in range(idx_i, 0, -1)]
+        d_all_items = lambda: [f"{pos[0]}{i}" for i in range(idx_i + 2, 9)]
+        l_all_items = lambda: [f"{'abcdefgh'[j]}{pos[1]}" for j in range(idx_j - 1, -1, -1)]
+        r_all_items = lambda: [f"{'abcdefgh'[j]}{pos[1]}" for j in range(idx_j + 1, 8)]
+        def ul_alL_items():
+            ret = []
+            i, j = idx_i, idx_j - 1
+            while i != -1 and j != -1:
+                ret.append(f"{'abcdefgh'[j]}{i}")
+                i -= 1
+                j -= 1
+            return ret
+        def ur_alL_items():
+            ret = []
+            i, j = idx_i, idx_j + 1
+            while i != 0 and j != 8:
+                ret.append(f"{'abcdefgh'[j]}{i}")
+                i -= 1
+                j += 1
+            return ret
+        def dl_all_items():
+            ret = []
+            i, j = idx_i + 2, idx_j - 1
+            while i != 9 and j != -1:
+                ret.append(f"{'abcdefgh'[j]}{i}")
+                i += 1
+                j -= 1
+            return ret
+        def dr_all_items():
+            ret = []
+            i, j = idx_i + 2, idx_j + 1
+            while i != 9 and j != 8:
+                ret.append(f"{'abcdefgh'[j]}{i}")
+                i += 1
+                j += 1
+            return ret
+
+        detect_directions_items = {
+            "u" : u_all_items,
+            "d" : d_all_items,
+            "l" : l_all_items,
+            "r" : r_all_items,
+            "ul" : ul_alL_items,
+            "ur" : ur_alL_items,
+            "dl" : dl_all_items,
+            "dr" : dr_all_items
+        }
+
 
     def get_around(self, pos: str) -> [dict, dict]:
         row, col = int(pos[1]), pos[0]
@@ -304,11 +351,13 @@ class OthelloGame(QMainWindow):
             rander_nor
         )
 
+
 if __name__ == "__main__":
     if sys.version_info[1] < 8:
         print("Python version should greater than 3.8")
         exit(-1)
     app = QApplication(sys.argv)
     game = OthelloGame()
-    game.show()
-    sys.exit(app.exec())
+    # game.show()
+    # sys.exit(app.exec())
+    game.check_color_flip("a1", Color.Black)
