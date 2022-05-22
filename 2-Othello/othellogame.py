@@ -76,8 +76,8 @@ class OthelloGame(QMainWindow):
         self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
         self.ui.BlackPieceCounter.setText(f"Black: {2}")
         self.ui.WhitePieceCounter.setText(f"White: {2}")
-        self.rander_valid_place(Color.Black)
         self._current_player = Color.Black
+        self.re_rander_ui()
 
     def pb_enable(self, b):
         def _able(pb: QPushButton):
@@ -87,10 +87,9 @@ class OthelloGame(QMainWindow):
 
     def click(self, pos: str):
 
-        # TODO: Check if piece is placed at a valid position
-        # pre_valid_place = self._get_valid_place(self._current_player)
-        # if pos not in pre_valid_place:
-        #     return
+        pre_valid_place = self.get_valid_place(self._current_player)
+        if pos not in pre_valid_place:
+            return
 
         # Set piece
         self.set_piece(pos, self._current_player)
@@ -100,9 +99,6 @@ class OthelloGame(QMainWindow):
             self.pb_enable(False)
             return
 
-        # TODO: Rander valid place here
-        # self._rander_valid_place(self._current_player)
-
         # Change next player message
         if self._current_player == Color.Black:
             self.ui.GameInfoLabel.setText("White Next")
@@ -111,6 +107,7 @@ class OthelloGame(QMainWindow):
 
         # flip player
         self._current_player = Color.White if self._current_player == Color.Black else Color.Black
+        self.re_rander_ui()
         self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
         self.ui.BlackPieceCounter.setText(f"Black: {self.count_color(Color.Black)}")
         self.ui.WhitePieceCounter.setText(f"White: {self.count_color(Color.White)}")
@@ -287,13 +284,30 @@ class OthelloGame(QMainWindow):
 
         return [around, around_space]
 
-    def rander_valid_place(self, color: Color):
-        def bunt_rander(pb: QPushButton):
+    def re_rander_ui(self):
+        def rander_valid_place(pb: QPushButton):
             pb.setStyleSheet(PIECE_BUTTON_VALID_PLACE_STYLE_SHEET)
             pb.setText("V")
+
+        def rander_nor(pb: QPushButton):
+            color_of_bnt = self.get_color_of_index(pb.objectName())
+
+            if color_of_bnt == Color.NotSet:
+                return
+
+            pb.setText("W" if color_of_bnt == "W" else "B")
+            pb.setStyleSheet(
+                PIECE_BUTTON_BLACK_STYLE_SHEET
+                if color_of_bnt == Color.Black else
+                PIECE_BUTTON_WHITE_STYLE_SHEET
+            )
+
         self.foreach_piece_button(
-            bunt_rander,
-            btn_list=[getattr(self.ui, name) for name in self.get_valid_place(color)]
+            rander_nor
+        )
+        self.foreach_piece_button(
+            rander_valid_place,
+            btn_list=[getattr(self.ui, name) for name in self.get_valid_place(self._current_player)]
         )
 
 
