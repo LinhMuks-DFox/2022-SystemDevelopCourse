@@ -297,7 +297,7 @@ class OthelloGame(QMainWindow):
             "l": True,  # left
             "r": True,  # right
         }
-        move_ment = {
+        outer_around = {
             "u": lambda: f"{col}{row - 2}",
             "d": lambda: f"{col}{row + 2}",
             "l": lambda: f"{'abcdefgh'[col_idx - 2]}{row}",
@@ -308,7 +308,7 @@ class OthelloGame(QMainWindow):
             "dl": lambda: f"{'abcdefgh'[col_idx - 2]}{row + 2}",
             "dr": lambda: f"{'abcdefgh'[col_idx + 2]}{row + 2}",
         }
-        around_space_f = {
+        inner_around = {
             "u": lambda: f"{col}{row - 1}",
             "d": lambda: f"{col}{row + 1}",
             "l": lambda: f"{'abcdefgh'[col_idx - 1]}{row}",
@@ -319,7 +319,7 @@ class OthelloGame(QMainWindow):
             "dl": lambda: f"{'abcdefgh'[col_idx - 1]}{row + 1}",
             "dr": lambda: f"{'abcdefgh'[col_idx + 1]}{row + 1}",
         }
-        around, around_space = dict(), dict()
+        outer, inner = dict(), dict()
         if col in "ab":
             direction["l"] = False
         if col in "gh":
@@ -331,26 +331,26 @@ class OthelloGame(QMainWindow):
 
         for k, v in direction.items():
             if v:
-                around[k] = move_ment[k]()
-                around_space[k] = around_space_f[k]()
+                outer[k] = outer_around[k]()
+                inner[k] = inner_around[k]()
 
         if direction["u"] and direction["l"]:
-            around["ul"] = move_ment["ul"]()
-            around_space["ul"] = around_space_f["ul"]()
+            outer["ul"] = outer_around["ul"]()
+            inner["ul"] = inner_around["ul"]()
 
         if direction["u"] and direction["r"]:
-            around["ur"] = move_ment["ur"]()
-            around_space["ur"] = around_space_f["ur"]()
+            outer["ur"] = outer_around["ur"]()
+            inner["ur"] = inner_around["ur"]()
 
         if direction["d"] and direction["l"]:
-            around["dl"] = move_ment["dl"]()
-            around_space["dl"] = around_space_f["dl"]()
+            outer["dl"] = outer_around["dl"]()
+            inner["dl"] = inner_around["dl"]()
 
         if direction["d"] and direction["r"]:
-            around["dr"] = move_ment["dr"]()
-            around_space["dr"] = around_space_f["dr"]()
+            outer["dr"] = outer_around["dr"]()
+            inner["dr"] = inner_around["dr"]()
 
-        return [around, around_space]
+        return [outer, inner]
 
     def re_rander_ui(self):
         self.ui.TotalCounter.setText(f"Total: {self.pressed_button_cnt}")
@@ -389,8 +389,8 @@ if __name__ == "__main__":
         exit(-1)
     app = QApplication(sys.argv)
     game = OthelloGame()
-    game.click("d3")
-    game.click("e3")
+    # game.click("d3")
+    # game.click("e3")
     # print(game.get_valid_place(Color.Black))
     # game.click("f3")
     # game.click("f4")
