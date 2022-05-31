@@ -4,7 +4,7 @@ import re
 from typing import NamedTuple
 from configs import *
 from unicodedata import east_asian_width
-
+import chardet
 
 class TokenType(enum.Enum):
     string = 0
@@ -51,10 +51,13 @@ class LexerDemo():
 if __name__ == "__main__":
 
     if INPUT_MODE == "FILE":
-        for t in LexerDemo().lex_up(open(INPUT_HANDLE, "r").read()):
+		print(f"Mode: FILE, File encode: {chardet.detect((content:=open(INPUT_HANDLE, 'r').read()))}")
+        for t in LexerDemo().lex_up(content):
             print(t)
 
     elif INPUT_MODE == "STDIO":
+		print("Mode: STDIO, please input:)
         inputs = input()
+        print(f"Encode of inputs: {chardet.detect(inputs)}")
         for t in LexerDemo().lex_up(inputs):
             print(t)
