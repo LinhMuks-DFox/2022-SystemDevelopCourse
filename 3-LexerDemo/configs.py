@@ -1,2 +1,2 @@
-INPUT_MODE = "FILE"
+INPUT_MODE = "STDIO"
 INPUT_HANDLE = "./input.txt"
