@@ -4,7 +4,15 @@ import re
 from typing import NamedTuple
 from configs import *
 from unicodedata import east_asian_width
-import chardet
+
+if DETECT_ENCODE:
+    try:
+        import chardet
+    except ImportError as ierr:
+        print("Cannnot find pacakge chardet, install it before use this script")
+        print("Or you can disable Text encode detect feature, change the value in configs.py")
+        print("configs.DETECT_ENCODE = False")
+        exit(-1)
 
 class TokenType(enum.Enum):
     string = 0
@@ -51,13 +59,15 @@ class LexerDemo():
 if __name__ == "__main__":
 
     if INPUT_MODE == "FILE":
-		print(f"Mode: FILE, File encode: {chardet.detect((content:=open(INPUT_HANDLE, 'r').read()))}")
+        if DETECT_ENCODE:
+            print(f"Mode: FILE, File encode: {chardet.detect((content:=open(INPUT_HANDLE, 'r').read()))}")
         for t in LexerDemo().lex_up(content):
             print(t)
 
     elif INPUT_MODE == "STDIO":
-		print("Mode: STDIO, please input:)
+        print("Mode: STDIO, please input:")
         inputs = input()
-        print(f"Encode of inputs: {chardet.detect(inputs)}")
+        if DETECT_ENCODE:
+            print(f"Encode of inputs: {chardet.detect(inputs)}")
         for t in LexerDemo().lex_up(inputs):
             print(t)
