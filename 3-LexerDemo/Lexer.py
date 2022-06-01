@@ -10,9 +10,11 @@ if DETECT_ENCODE:
         import chardet
     except ImportError as ierr:
         print("Cannnot find pacakge chardet, install it before use this script")
-        print("Or you can disable Text encode detect feature, change the value in configs.py")
+        print(
+            "Or you can disable Text encode detect feature, change the value in configs.py")
         print("configs.DETECT_ENCODE = False")
         exit(-1)
+
 
 class TokenType(enum.Enum):
     string = 0
@@ -60,7 +62,8 @@ if __name__ == "__main__":
 
     if INPUT_MODE == "FILE":
         if DETECT_ENCODE:
-            print(f"Mode: FILE, File encode: {chardet.detect((content:=open(INPUT_HANDLE, 'r').read()))}")
+            print(
+                f"Mode: FILE, File encode: {chardet.detect((content:=open(INPUT_HANDLE, 'r').read()))}")
         for t in LexerDemo().lex_up(content):
             print(t)
 
