@@ -15,17 +15,17 @@ const static char *COMPILER =
 #endif
 const static char *RIGHTS = "Mux BrainFuck Interpreter, CopyRight: Mux 2022";
 const static char *HELLO_WORLD_EXAMPLE =
-        "# test comment\n"
+        "# This is a comment~\n"
         "++++++++++\n"
-        "[\n"
-        "    >+++++++>++++++++++>+++>+<<<<-\n"
-        "]\n"
+        "[\n\t>+++++++>++++++++++>+++>+<<<<-\n]\n"
         ">++.>+.+++++++..+++.>++.<<+++++++++++++++.\n"
         ">.+++.------.--------.>+.>.\n"
+        "# To see and clean the runtime-stack."
         "[%[-]<]";
 const static size_t CPP_STD_VERSION = __cplusplus / 10000;
 const static char *HELP_DOC =
         "bf [-f: file_path] [-s: stack size] [-h/--help/-help: document] [-v/--version/-version: version]\n"
+        "[--hello_world: to see the hello world program example.]"
         "Mux Version brain fuck Syntax: \n"
         "'+': Increase byte at the data pointer by one.\n"
         "'-': Decrease byte at the data pointer by one.\n"
