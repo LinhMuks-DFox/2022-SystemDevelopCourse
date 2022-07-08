@@ -11,7 +11,7 @@ const static char *COMPILER =
 "MSVC";
 #else
 "Unknown Compiler";
-#warning "Unknown Compiler detect"
+#warning "Unknown Compiler detected"
 #endif
 const static char *RIGHTS = "Mux BrainFuck Interpreter, CopyRight: Mux 2022";
 const static char *HELLO_WORLD_EXAMPLE =
