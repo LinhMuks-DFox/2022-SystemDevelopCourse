@@ -20,7 +20,7 @@ const static char *HELLO_WORLD_EXAMPLE =
         "[\n\t>+++++++>++++++++++>+++>+<<<<-\n]\n"
         ">++.>+.+++++++..+++.>++.<<+++++++++++++++.\n"
         ">.+++.------.--------.>+.>.\n"
-        "# To see and clean the runtime-stack."
+        "# To see and clean the runtime-stack.\n"
         "[%[-]<]";
 const static size_t CPP_STD_VERSION = __cplusplus / 10000;
 const static char *HELP_DOC =
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    if (parser.cmd_option_exists("--hello_word")) {
+    if (parser.cmd_option_exists("--hello_world")) {
         cout << "Copy and paste the content below to a file, and use command: \n"
                 "bf -f <file_name>\n"
                 "to run hello world program\n";
