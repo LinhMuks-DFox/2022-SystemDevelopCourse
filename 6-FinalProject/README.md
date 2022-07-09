@@ -121,38 +121,35 @@ hello world
 Build手順：
 1. gitでこのプロジェクトをcloneする：
 ```bash
->>> git clone https://github.com/MuxFox/2022-SystemDevelopCourse
+git clone https://github.com/MuxFox/2022-SystemDevelopCourse
 ```
 
 2. 6-FinalProject ホルダーを開く：
 ```bash
->>> cd 2022-SystemDevelopCourse
-2022-SystemDevelopCourse>>> cd 6-FinalProject
+cd 2022-SystemDevelopCourse
+cd 6-FinalProject
 ```
 
 3. build ホルダーを作る
 ```bash
-6-FinalProject>>> makedir build
+mkdir build
 ```
 
 4. CMakeでbuild
 ```bash
-6-FinalProject>>> cd build
-build>>> cmake ..
+cd build
+cmake ..
 ```
 
 5. CMakeで作ったMakeFile経由でCompile
 ```bash
-build>>> make .
+make .
 ```
 
 ここまでできたら、Executableファイルはbuildホルダーにあるはず、使ってみる：
 
 ```bash
-build>>> BrainFuck -v
-Mux BrainFuck Interpreter, CopyRight: Mux 2022
-[Compiler and C++ Version used to build BrainFuck: clang++/std:201703]
-Version: 1.0.2
+BrainFuck -v
 ```
 
 ### 実行オプション
