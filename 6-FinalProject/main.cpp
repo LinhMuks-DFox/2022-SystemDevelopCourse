@@ -38,8 +38,8 @@ const static char *HELP_DOC =
         "'#': Comment\n"
         "';': Display the entire run stack\n"
         "':': Display the current position of the data pointer\n"
-        "'%': Display the contents of the runtime stack from the start to the data pointer position\n";
-
+        "'%': Display the contents of the runtime stack from the start to the data pointer position\n"
+        "'&': Pause Program until user press any key.";
 int main(int argc, char *argv[]) {
     CommandLineParser parser(argc, argv);
 

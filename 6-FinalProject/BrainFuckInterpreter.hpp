@@ -95,7 +95,7 @@ struct JumpTable {
                 right_left[position] = stk_pop();
         }
 
-        for (const auto&[k, v]: right_left)
+        for (const auto &[k, v]: right_left)
             left_right[v] = k;
     }
 };
@@ -143,7 +143,7 @@ private:
     static string lexical_check(const string &code) {
         set<char> valid_instructions = {
                 '<', '>', ',', '.', '+', '-', '[', ']',
-                ';', ':', '%', '#'
+                ';', ':', '%', '#', '&'
         };
         stack<char> stk;
         for (const auto &ch: code) {
@@ -218,10 +218,12 @@ public:
             switch (ins) {
                 case '>':
                     if (p == runtime_stk + this->stk->stk_size) {
-                        cout
-                                << "RuntimeWarn:can not move pc pointer anymore, pc pointer is out of stack."
-                                << endl;
-                        cout << "\t\t RuntimeStk Resized, to:"
+                        cout << "RuntimeWarn:can not move pc pointer "
+                                "anymore, pc pointer is out of stack." << endl;
+                        cout << "|----------Run time stack----------|\n"
+                                "                                  ↑\n"
+                                "                                  p";
+                        cout << "Trying to resized Runtime stack to:"
                              << (stk->stk_size * 2) << endl;
                         stk->resize_stk(stk->stk_size * 2);
                         p = stk->p;
@@ -229,10 +231,14 @@ public:
                     p++;
                     break;
                 case '<':
-                    if (p == runtime_stk)
-                        cout
-                                << "RuntimeWarn:pc pointer is now points to the top of rt stack."
-                                << endl;
+                    if (p == runtime_stk) {
+                        cout << "RuntimeWarn:pc pointer is now "
+                                "points to the top of rt stack." << endl;
+                        cout << "|----------Run time stack----------|\n"
+                                "↑\n"
+                                "p";
+                        break;
+                    }
                     p--;
                     break;
                 case '+':
@@ -261,6 +267,9 @@ public:
                     break;
                 case '%':
                     stk->show(p - runtime_stk);
+                    break;
+                case '&':
+                    system("pause");
                     break;
                 default:
                     cerr << "Interpreter Error" << endl;
