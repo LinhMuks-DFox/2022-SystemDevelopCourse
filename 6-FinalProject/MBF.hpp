@@ -28,7 +28,7 @@ public:
 
     explicit RuntimeStack(size_t size) {
         stk = new char[size];
-        for (size_t i = 0; i < size; ++i) stk[i] = 0;
+        std::memset(stk, 0, size);
         p = stk;
         stk_size = size;
     }
