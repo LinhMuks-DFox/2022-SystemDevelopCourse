@@ -14,7 +14,7 @@
 #include <cstring>
 using namespace std;
 
-static const auto PROGRAM_PAUSE = [](){
+[[maybe_unused]]static const auto PROGRAM_PAUSE = [](){
     cout << "Press any key to continue program...\n" << flush;
     cin.get();
 };
