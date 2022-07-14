@@ -1,3 +1,6 @@
+#pragma ONCE
+#ifndef MBF_HPP
+#define MBF_HPP
 #include <iostream>
 #include <set>
 #include <stack>
@@ -294,3 +297,4 @@ struct Interpreter {
         return executor.execute();
     }
 };
+#endif //MBF_HPP

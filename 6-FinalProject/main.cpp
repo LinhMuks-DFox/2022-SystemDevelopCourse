@@ -1,4 +1,4 @@
-#include "BrainFuckInterpreter.hpp"
+#include "MBF.hpp"
 #include "CommandLineParser.hpp"
 
 const static char *BF_INTERPRETER_VERSION = "1.0.2";
@@ -13,7 +13,7 @@ const static char *COMPILER =
 "Unknown Compiler";
 #warning "Unknown Compiler detected"
 #endif
-const static char *RIGHTS = "Mux BrainFuck Interpreter, CopyRight: Mux 2022";
+const static char *RIGHTS = "Mux BrainFuck Interpreter[mbf], CopyRight: Mux 2022";
 const static char *HELLO_WORLD_EXAMPLE =
         "# This is a comment~\n"
         "++++++++++\n"
@@ -24,7 +24,7 @@ const static char *HELLO_WORLD_EXAMPLE =
         "[%[-]<]";
 const static size_t CPP_STD_VERSION = __cplusplus / 10000;
 const static char *HELP_DOC =
-        "bf [-f: file_path] [-s: stack size] [-h/--help/-help: document] [-v/--version/-version: version]\n"
+        "mbf [-f: file_path] [-s: stack size] [-h/--help/-help: document] [-v/--version/-version: version]\n"
         "[--hello_world: to see the hello world program example.]"
         "Mux Version brain fuck Syntax: \n"
         "'+': Increase byte at the data pointer by one.\n"
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
 
     if (parser.cmd_option_exists("--hello_world")) {
         cout << "Copy and paste the content below to a file, and use command: \n"
-                "bf -f <file_name>\n"
+                "mbf -f <file_name>\n"
                 "to run hello world program\n";
         cout << HELLO_WORLD_EXAMPLE << endl;
         return 0;
@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
     if (path.empty()) {
         cerr << "File path is empty." << endl;
         cerr << "Use option -f to tell interpreter where is the script file." << endl;
-        cerr << "example: BrainFuck -f test.bf" << endl;
+        cerr << "example: mbf -f test.bf" << endl;
         return 0;
     }
     int stack_size = [&parser]() -> int {

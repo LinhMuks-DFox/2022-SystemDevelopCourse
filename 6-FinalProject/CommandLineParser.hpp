@@ -1,5 +1,5 @@
-#ifndef BRAINFUCK_COMMAND_LINE_PARSER_HPP
-#define BRAINFUCK_COMMAND_LINE_PARSER_HPP
+#ifndef COMMAND_LINE_PARSER_HPP
+#define COMMAND_LINE_PARSER_HPP
 
 #include <algorithm>
 #include <vector>
@@ -35,4 +35,4 @@ private:
     std::vector<std::string> tokens;
 };
 
-#endif //BRAINFUCK_COMMAND_LINE_PARSER_HPP
+#endif //COMMAND_LINE_PARSER_HPP
