@@ -117,7 +117,7 @@ private:
 
     static string pre_process(const string &source) {
         stringstream s_out, s_in(source);
-        set<char> skips = {'\0', ' ', '\n', '\t'};
+        set<char> skips = {'\0', ' ', '\n', '\t', '\r'};
         auto is_skip_able = [&skips](char ch) -> bool {
             return skips.find(ch) != skips.end();
         };
