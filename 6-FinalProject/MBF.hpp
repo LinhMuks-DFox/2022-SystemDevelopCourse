@@ -239,7 +239,7 @@ public:
                                 "points to the top of rt stack." << endl;
                         cout << "|----------Run time stack----------|\n"
                                 "^\n"
-                                "p";
+                                "p\n";
                         break;
                     }
                     p--;
