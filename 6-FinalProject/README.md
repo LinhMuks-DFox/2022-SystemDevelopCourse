@@ -1,12 +1,23 @@
-# BrainFuck インタプリター 
-A usable implement by C++17.  
+# MBF Language Interpreter
+**THIS PROJECT WAS OPEN SOURCED UNDER MIT LINCESE.**
+
+作者：0cdi2210
 
  [BrainFuckとは？](https://en.wikipedia.org/wiki/Brainfuck) 
 
-BrainFuck言語の文法とてもシンプルですが，Turing 完璧な言語なので，複雑さは別にしてC，Java，C++ができることを，BrainFuckで実装できる．
-このプログラムは，C++17を用いた，BrainFuckのインタプリタの実装である．
+### プラットフォームと紹介
 
-BrainFuckの文法：
+MBF言語は， [BrainFuck](https://en.wikipedia.org/wiki/Brainfuck)言語を基づいた，デバッグFeatureを加えた，Turing 完璧な言語である．
+
+ [BrainFuck](https://en.wikipedia.org/wiki/Brainfuck)言語の文法とてもシンプルですが，Turing 完璧な言語なので，プログラムの複雑さは別にして，C，Java，C++ができることを，BrainFuckで実装できる．
+
+このプログラムは，ISOーC++17で実装された．
+
+Operate System プラットフォーム：C++17が動けるOperate System で動作するはず．
+
+必要なライブラリー：C++ STL(aka, Standard Template Lib, version： c++ std17), 及びC++17標準ライブラリ．
+
+### MBF Language  の文法
 
 | 命令文 | 意味                                                         |
 | :----: | :----------------------------------------------------------- |
@@ -33,7 +44,7 @@ BrainFuckの文法：
 
 
 
-プログラムの例：
+### プログラムの例
 
 ```BrainFuck
 >> : +++ -- << :
@@ -97,7 +108,7 @@ Output:
 0
 ```
 
-#### プログラムの例
+Hello World: 
 
 hello world
 
@@ -111,7 +122,7 @@ hello world
 >.+++.------.--------.>+.>.
 ```
 
-### 使う前に：
+### 使う前に
 
 このソフトウェアを使うのに、CMakeのインストールが必要である。
 
