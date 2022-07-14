@@ -175,7 +175,7 @@ public:
         return lexical_check(pre_process(read_fromfile(file_path)));
     }
 
-    static string scan_string(const string &source) {
+    [[maybe_unused]]static string scan_string(const string &source) {
         return lexical_check(pre_process(source));
     }
 
@@ -192,7 +192,7 @@ private:
         cout << *p << flush;
     }
 
-    void show_runtime_stk() {
+    [[maybe_unused]]void show_runtime_stk() {
         stk->show(stk->stk_size);
     }
 
@@ -224,8 +224,8 @@ public:
                         cout << "RuntimeWarn:can not move pc pointer "
                                 "anymore, pc pointer is out of stack." << endl;
                         cout << "|----------Run time stack----------|\n"
-                                "                                  ↑\n"
-                                "                                  p";
+                                "                                  ^\n"
+                                "                                  p\n";
                         cout << "Trying to resized Runtime stack to:"
                              << (stk->stk_size * 2) << endl;
                         stk->resize_stk(stk->stk_size * 2);
@@ -238,7 +238,7 @@ public:
                         cout << "RuntimeWarn:pc pointer is now "
                                 "points to the top of rt stack." << endl;
                         cout << "|----------Run time stack----------|\n"
-                                "↑\n"
+                                "^\n"
                                 "p";
                         break;
                     }
