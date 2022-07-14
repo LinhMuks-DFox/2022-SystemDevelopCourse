@@ -40,6 +40,7 @@ const static char *HELP_DOC =
         "':': Display the current position of the data pointer\n"
         "'%': Display the contents of the runtime stack from the start to the data pointer position\n"
         "'&': Pause Program until user press any key.";
+
 int main(int argc, char *argv[]) {
     CommandLineParser parser(argc, argv);
 
@@ -87,5 +88,11 @@ int main(int argc, char *argv[]) {
         } else
             return 300;
     }();
-    return Interpreter()(path, stack_size);
+
+    try {
+        return Interpreter()(path, stack_size);
+    } catch (invalid_argument &invalid_e) {
+        cerr << "invalid argument, :" << invalid_e.what() << endl;
+        return -1;
+    }
 }
