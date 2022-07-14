@@ -14,6 +14,11 @@
 #include <cstring>
 using namespace std;
 
+static const auto PROGRAM_PAUSE = [](){
+    cout << "Press any key to continue program...\n" << flush;
+    cin.get();
+};
+
 struct RuntimeStack {
 private:
     void release_handle() {
@@ -271,7 +276,7 @@ public:
                     stk->show(p - runtime_stk);
                     break;
                 case '&':
-                    system("pause");
+                    PROGRAM_PAUSE();
                     break;
                 default:
                     cerr << "Interpreter Error" << endl;
