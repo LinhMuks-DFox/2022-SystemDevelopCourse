@@ -222,7 +222,7 @@ public:
                 case '>':
                     if (p == runtime_stk + this->stk->stk_size) {
                         cout << "RuntimeWarn:can not move pc pointer "
-                                "anymore, pc pointer is out of stack." << endl;
+                                "anymore, data pointer is out of stack." << endl;
                         cout << "|----------Run time stack----------|\n"
                                 "                                  ^\n"
                                 "                                  p\n";
@@ -235,8 +235,7 @@ public:
                     break;
                 case '<':
                     if (p == runtime_stk) {
-                        cout << "RuntimeWarn:pc pointer is now "
-                                "points to the top of rt stack." << endl;
+                        cout << "RuntimeWarn:data pointer is now points to the top of rt stack." << endl;
                         cout << "|----------Run time stack----------|\n"
                                 "^\n"
                                 "p\n";
