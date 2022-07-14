@@ -11,7 +11,7 @@
 #include <map>
 #include <memory>
 #include <cstdlib>
-
+#include <cstring>
 using namespace std;
 
 struct RuntimeStack {
@@ -63,7 +63,7 @@ public:
     void resize_stk(size_t new_size) {
         if (new_size < stk_size) return;
         char *_p = new char[new_size];
-        memcpy(_p, stk, sizeof(char) * stk_size);
+        std::memcpy(_p, stk, sizeof(char) * stk_size);
         delete[] stk;
         stk = _p;
     }
